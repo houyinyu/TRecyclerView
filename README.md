@@ -1,22 +1,13 @@
 # TRecyclerView<br/>
 
-由于项目需求,很多地方使用了大量的多类型item，就做了下封装，感觉再怎么封装依旧不是很完美，于是捣鼓捣鼓，自己弄了套刷新库，主要是整合了针对单类型,多类型的item开发,支持下拉刷新，加载更多功能的TRecyclerView，旨意在于让开发者只关心ViewHolder的开发，高复用,TRecyclerView(面向ViewHolder开发的刷新库,多类型item终结者,好不好用你试试就知道) <br/>
+多类型item需求,来源于网友 SelfZhangTQ  非本人源码 <br/>
 ### 主要功能<br/>
    * 下拉刷新、加载更多；<br/>
    * 自定义下拉动画；<br/>
    * 高复用,支持多类型；<br/>
    * ...<br/>
-   项目github地址:<https://github.com/SelfZhangTQ/TRecyclerView> <br/>
+   项目github地址:<https://github.com/houyinyu/TRecyclerView> <br/>
 
-#### 效果图 <br/>
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/111.png)
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/222.png)<br/>
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/333.png)
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/444.png)<br/>
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/555.png)
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/666.png)<br/>
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/777.png)
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/888.png)<br/>
 
 
 #### 使用步骤 <br/>
@@ -32,7 +23,7 @@
 
  Step 2. 在你的model的build.gradle文件中增加TRecyclerView依赖<br/>
 
-     com.github.SelfZhangTQ:TRecyclerView:2.5.4
+     com.github.houyinyu:TRecyclerView:2.5.4
 
 
 
@@ -131,7 +122,7 @@
         adapter.setOnItemClickListener(this);//实现OnItemClickListener接口
         或者通过DelegateAdapter.Builder().setOnItemClickListener(this)配置
         
-      项目实战使用可参考:<https://github.com/SelfZhangTQ/T-MVVM> <br/>
+      <br/>
 
   Step 8.CoordinatorLayout+AppBarLayout+SwipeRecyclerView使用的问题<br/>
      
@@ -145,32 +136,5 @@
         app:layout_behavior="com.trecyclerview.util.AppBarBehavior">
      
 
- TRecyclerView使用步骤介绍完了，对了adapter好像忘了介绍，NO,NO,NO,你不需要关心adapter,只需要写对应UI以及数据设置就行，尽情的编写ViewHolder吧
 
 
- 项目github地址:<https://github.com/SelfZhangTQ/TRecyclerView> <br/>
-项目实战地址github地址:<https://github.com/SelfZhangTQ/T-MVVM> <br/>
-
-效果图：<br/>
-![image](https://github.com/SelfZhangTQ/TRecyclerView/raw/master/screenshots/9_video.gif)<br/>
-
-#### 第三方库 <br/>
-* multitype <br/>
-* AVLoadingIndicatorView <br/>
-
-#### license <br/>
-     
-    Copyright 2018 tianqiuzhang
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-#### 最后 <br/>
-技术有限，拒绝吐槽，欢迎建议，感谢支持。
