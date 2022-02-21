@@ -1,10 +1,12 @@
 package com.trecyclerview.holder;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.trecyclerview.adapter.VHolder;
 
@@ -21,7 +23,7 @@ public abstract class AbsItemHolder<T, VH extends AbsHolder> extends VHolder<T, 
 
     @Override
     protected @NonNull
-    VH onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
+    RecyclerView.ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
         return createViewHolder(inflater.inflate(getLayoutResId(), parent, false));
     }
 

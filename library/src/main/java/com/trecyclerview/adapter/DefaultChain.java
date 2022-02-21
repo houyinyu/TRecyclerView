@@ -1,7 +1,7 @@
 package com.trecyclerview.adapter;
 
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * @author：tqzhang on 18/9/6 11:22

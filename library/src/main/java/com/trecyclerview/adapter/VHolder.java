@@ -16,19 +16,20 @@
 
 package com.trecyclerview.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
-public abstract class VHolder<T, VH extends ViewHolder> {
+public abstract class VHolder<T, VH extends RecyclerView.ViewHolder> {
 
     DelegateAdapter adapter;
 
     protected abstract @NonNull
-    VH onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent);
+    RecyclerView.ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent);
 
 
     protected abstract void onBindViewHolder(@NonNull VH holder, @NonNull T item);
@@ -40,7 +41,7 @@ public abstract class VHolder<T, VH extends ViewHolder> {
     }
 
 
-    protected final int getPosition(@NonNull final ViewHolder holder) {
+    protected final int getPosition(@NonNull final RecyclerView.ViewHolder holder) {
         return holder.getAdapterPosition();
     }
 

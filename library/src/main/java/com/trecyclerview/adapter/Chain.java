@@ -1,6 +1,7 @@
 package com.trecyclerview.adapter;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 public interface Chain<T> {
 

@@ -1,9 +1,8 @@
 
 package com.trecyclerview.adapter;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+
+import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,10 +16,13 @@ import java.util.List;
 
 import static com.trecyclerview.util.Preconditions.checkNotNull;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 /**
  * @author tqzhang
  */
-public class DelegateAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class DelegateAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final String TAG = DelegateAdapter.class.getSimpleName();
 
@@ -71,7 +73,7 @@ public class DelegateAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     @Override
-    public final ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public final RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (null == inflater) {
             inflater = LayoutInflater.from(parent.getContext());
         }
@@ -80,12 +82,12 @@ public class DelegateAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     @Override
-    public final void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public final void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         onBindViewHolder(holder, position, Collections.emptyList());
     }
 
     @Override
-    public final void onBindViewHolder(ViewHolder holder, final int position, @NonNull List<Object> payloads) {
+    public final void onBindViewHolder(RecyclerView.ViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull List<Object> payloads) {
         VHolder vHolder = viewTypes.getItemView(holder.getItemViewType());
         vHolder.onBindViewHolder(holder, datas.get(position), payloads);
         if (null != mOnItemClickListener) {
@@ -116,29 +118,29 @@ public class DelegateAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 
     @Override
-    public final void onViewRecycled(@NonNull ViewHolder holder) {
+    public final void onViewRecycled(@NonNull RecyclerView.ViewHolder holder) {
         onViewByHolder(holder).onViewRecycled(holder);
     }
 
 
     @Override
-    public final boolean onFailedToRecycleView(@NonNull ViewHolder holder) {
+    public final boolean onFailedToRecycleView(@NonNull RecyclerView.ViewHolder holder) {
         return onViewByHolder(holder).onFailedToRecycleView(holder);
     }
 
 
     @Override
-    public final void onViewAttachedToWindow(@NonNull ViewHolder holder) {
+    public final void onViewAttachedToWindow(@NonNull RecyclerView.ViewHolder holder) {
         onViewByHolder(holder).onViewAttachedToWindow(holder);
     }
 
 
     @Override
-    public final void onViewDetachedFromWindow(@NonNull ViewHolder holder) {
+    public final void onViewDetachedFromWindow(@NonNull RecyclerView.ViewHolder holder) {
         onViewByHolder(holder).onViewDetachedFromWindow(holder);
     }
 
-    private VHolder onViewByHolder(@NonNull ViewHolder holder) {
+    private VHolder onViewByHolder(@NonNull RecyclerView.ViewHolder holder) {
         return viewTypes.getItemView(holder.getItemViewType());
     }
 
